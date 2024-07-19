@@ -6,3 +6,5 @@ config:
   azure-ts-serverless:errorDocument: error.html
   azure-ts-serverless:indexDocument: index.html
   azure-ts-serverless:sitePath: ./www
+environment:
+  - lotctl-azure
