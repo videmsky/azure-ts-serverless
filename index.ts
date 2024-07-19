@@ -30,7 +30,7 @@ const deploymentSettings = new service.DeploymentSettings("lotctl-deployment-set
   sourceContext: {
     git: {
       branch: "refs/heads/main",
-      repoUrl: "https://github.com/videmsky/aws-ts-static-website.git",
+      repoUrl: "https://github.com/videmsky/azure-ts-serverless.git",
     }
   }
 });
@@ -47,7 +47,7 @@ const ttlSchedule = new service.TtlSchedule("ttlSchedule", {
   organization: org,
   project: project,
   stack: stack,
-  timestamp: "2024-07-13T00:00:00Z"
+  timestamp: "2024-07-24T00:00:00Z"
 }, {dependsOn: [deploymentSettings]})
 
 // Create a resource group for the website.
