@@ -5,6 +5,17 @@ permissions:
   id-token: write
   contents: read
 jobs:
+  check:
+    name: Check
+    runs-on: self-hosted
+    steps: 
+      - run: |
+          if [ -z "$ARM_OIDC_TOKEN" ]; then
+            echo "ARM_OIDC_TOKEN is not set"
+          else
+            echo "ARM_OIDC_TOKEN is set"
+          fi
+
   preview:
     name: Preview
     runs-on: ubuntu-latest
