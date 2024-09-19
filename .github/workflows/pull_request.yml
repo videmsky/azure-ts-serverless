@@ -15,11 +15,11 @@ jobs:
           node-version-file: package.json
       - run: npm install
       - uses: actions/checkout@v4
-      - uses: pulumi/auth-actions@v1
-        with:
-          organization: team-ce
-          requested-token-type: urn:pulumi:token-type:access_token:personal
-          scope: user:laci-pulumi-corp
+      # - uses: pulumi/auth-actions@v1
+      #   with:
+      #     organization: team-ce
+      #     requested-token-type: urn:pulumi:token-type:access_token:personal
+      #     scope: user:laci-pulumi-corp
       - uses: pulumi/actions@v5
         with:
           command: preview
