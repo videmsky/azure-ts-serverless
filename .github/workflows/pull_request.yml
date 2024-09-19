@@ -1,0 +1,35 @@
+name: Pulumi
+on:
+  - pull_request 
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  preview:
+    name: Preview
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4.0.2
+        with:
+          node-version-file: package.json
+      - run: npm install
+      - uses: actions/checkout@v4
+      # - uses: pulumi/auth-actions@v1
+      #   with:
+      #     organization: team-ce
+      #     requested-token-type: urn:pulumi:token-type:access_token:personal
+      #     scope: user:laci-pulumi-corp
+      - uses: pulumi/actions@v5
+        with:
+          command: preview
+          stack-name: team-ce/lotctl
+          upsert: true
+      - run: |
+          if [ -z "$ARM_OIDC_TOKEN" ]; then
+            echo "ARM_OIDC_TOKEN is not set"
+          else
+            echo "ARM_OIDC_TOKEN is set"
+          fi
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}

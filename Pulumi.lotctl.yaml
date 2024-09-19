@@ -1,10 +1,10 @@
 config:
   azure-native:location: WestUS
-  azure-ts-serverless:pulumiAccessToken:
-    secure: AAABALt0jawwIkCTxJoLZBPdjuguplm9cv4IQRg8EL5B7FPIh7SsYXsf4cOXXPvn8wR8TCwKJ6GUmTX2YORYcLPfXkwIH+usZG8gAA==
   azure-ts-serverless:appPath: ./app
   azure-ts-serverless:errorDocument: error.html
   azure-ts-serverless:indexDocument: index.html
+  azure-ts-serverless:pulumiAccessToken:
+    secure: AAABAE/5UFu+HSH95S6lRl0wMHhXPw2rXcTYTl/IL1AfMNHkJeC28fEhkmUvh6ppaIIdoX9h0iapddvOphkm3AYQhoWpFA8hxGwhlA==
   azure-ts-serverless:sitePath: ./www
 environment:
   - lotctl-azure
